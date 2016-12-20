@@ -17,6 +17,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>cl.clarochile</groupId>
+      <artifactId>PermissionsWSDL</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>javaee</groupId>
       <artifactId>javaee-api</artifactId>
       <version>5</version>

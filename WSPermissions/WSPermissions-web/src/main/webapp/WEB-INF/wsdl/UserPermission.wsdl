@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.clarochile.cl/webservices/UserPermission/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserPermission" targetNamespace="http://www.clarochile.cl/webservices/UserPermission/" xmlns:xsd1="http://www.clarochile.cl/webservices/types/">
+    <wsdl:import namespace="http://www.clarochile.cl/webservices/types/" location="Types.xsd"></wsdl:import>
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://www.clarochile.cl/webservices/UserPermission/">
+            <xsd:import schemaLocation="Types.xsd" namespace="http://www.clarochile.cl/webservices/types/"></xsd:import>
+            <xsd:element name="CreateUserPermission">
+        <xsd:complexType>
+          <xsd:sequence minOccurs="1" maxOccurs="1">
+            <xsd:element name="userPermission" type="xsd1:UserPermissionType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateUserPermissionResponse">
+        <xsd:complexType>
+          <xsd:sequence maxOccurs="1" minOccurs="1">
+            <xsd:element name="status" type="xsd1:WebserviceStatusType" maxOccurs="1" minOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateUserPermission">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="userPermission" type="xsd1:UserPermissionType" maxOccurs="1" minOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateUserPermissionResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="status" type="xsd1:WebserviceStatusType" maxOccurs="1" minOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteUserPermission">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="userPermission" type="xsd1:UserPermissionType" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteUserPermissionResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="status" type="xsd1:WebserviceStatusType" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListUserPermission">
+      	<xsd:complexType>
+      		<xsd:sequence maxOccurs="1" minOccurs="1">
+
+      			<xsd:element name="rut" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="rutDelegate" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="search" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="pagination" type="xsd1:PaginationType" minOccurs="0" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListUserPermissionResponse">
+      	<xsd:complexType>
+      		<xsd:sequence maxOccurs="1" minOccurs="0">
+
+      			<xsd:element name="status"
+      				type="xsd1:WebserviceStatusType" minOccurs="1"
+      				maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="list" type="xsd1:UserPermissionType" minOccurs="0" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateUserPermissionRequest">
+    <wsdl:part element="tns:CreateUserPermission" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CreateUserPermissionResponse">
+    <wsdl:part element="tns:CreateUserPermissionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPermissionRequest">
+  	<wsdl:part name="parameters" element="tns:UpdateUserPermission"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPermissionResponse">
+  	<wsdl:part name="parameters" element="tns:UpdateUserPermissionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteUserPermissionRequest">
+  	<wsdl:part name="parameters" element="tns:DeleteUserPermission"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteUserPermissionResponse">
+  	<wsdl:part name="parameters" element="tns:DeleteUserPermissionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListUserPermissionRequest">
+  	<wsdl:part name="parameters" element="tns:ListUserPermission"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListUserPermissionResponse">
+  	<wsdl:part name="parameters" element="tns:ListUserPermissionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UserPermission">
+    <wsdl:operation name="CreateUserPermission">
+      <wsdl:input message="tns:CreateUserPermissionRequest"/>
+      <wsdl:output message="tns:CreateUserPermissionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPermission">
+    	<wsdl:input message="tns:UpdateUserPermissionRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateUserPermissionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPermission">
+    	<wsdl:input message="tns:DeleteUserPermissionRequest"></wsdl:input>
+    	<wsdl:output message="tns:DeleteUserPermissionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUserPermission">
+    	<wsdl:input message="tns:ListUserPermissionRequest"></wsdl:input>
+    	<wsdl:output message="tns:ListUserPermissionResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserPermissionSOAP" type="tns:UserPermission">
+  	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="CreateUserPermission">
+  		<soap:operation
+  			soapAction="http://www.clarochile.cl/webservices/UserPermission/CreateUserPermission" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="UpdateUserPermission">
+  		<soap:operation
+  			soapAction="http://www.clarochile.cl/webservices/UserPermission/UpdateUserPermission" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="DeleteUserPermission">
+  		<soap:operation
+  			soapAction="http://www.clarochile.cl/webservices/UserPermission/DeleteUserPermission" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ListUserPermission">
+  		<soap:operation
+  			soapAction="http://www.clarochile.cl/webservices/UserPermission/ListUserPermission" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserPermission">
+    <wsdl:port binding="tns:UserPermissionSOAP" name="UserPermissionSOAP">
+      <soap:address location="http://www.clarochile.cl/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

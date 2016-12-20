@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/luis/Descargas/v1/UserPermission.wsdl" uri="wsdl/UserPermission.wsdl"/>
+    <system systemId="file:/home/luis/Descargas/v1/Types.xsd" uri="wsdl/Types.xsd"/>
+</catalog>
